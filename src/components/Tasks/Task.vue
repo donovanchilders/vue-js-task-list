@@ -1,6 +1,6 @@
 <template>
     <li class="list-group-item p-0">
-        <label :class="{ 'completed': task.completed }" :title="task.completed ? 'Mark incomplete' : 'Mark complete'">
+        <label :class="{ 'completed': task.completed }" class="p-2 m-0 d-block" :title="task.completed ? 'Mark incomplete' : 'Mark complete'">
             <input type="checkbox" v-model="task.completed" @change="toggleTask" class="mr-2" />
             <span>{{ task.name }}</span>
             <button type="button" class="close ml-2" aria-label="Close" @click.prevent="deleteTask(task.id)" v-if="task.completed" title="Delete task">
@@ -33,9 +33,6 @@ export default {
 <style lang="scss" scoped>
     label {
         cursor: pointer;
-        display: block;
-        margin: 0;
-        padding: 0.5rem;
         &:hover {
             background-color: #eee;
         }
