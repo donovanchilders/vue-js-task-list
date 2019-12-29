@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-lg-6 text-lg-right">
                     <button class="btn btn-sm btn-link" @click.prevent="clearSessionStorage">Clear Session Storage</button>
-                    <div v-if="sessionCleared"><small>Cleared! <a href="/">Reload</a> to show all default items</small></div>
+                    <div v-if="sessionCleared"><small>Cleared! <a href="">Reload</a> to show all default items</small></div>
                 </div>
             </div>
         </div>
