@@ -28,6 +28,10 @@ export default new Vuex.Store({
         updateLocalStorage(state) {
             let storage = window.sessionStorage;
             storage.setItem('dmc-todo-list', JSON.stringify(state.tasks));
+        },
+        clearSessionStorage() {
+            let storage = window.sessionStorage;
+            storage.clear();
         }
     },
     actions: {
@@ -42,6 +46,9 @@ export default new Vuex.Store({
         deleteTask ( {commit }, payload) {
             commit('deleteTask', payload);
             commit('updateLocalStorage');
+        },
+        clearStorage( {commit}) {
+            commit('clearSessionStorage');
         }
     },
     getters: {

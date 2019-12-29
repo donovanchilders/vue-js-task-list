@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <nav class="navbar navbar-expand-lg navbar-light border-bottom">
         <div class="container">
             <a class="navbar-brand" href="/">Vue Task List</a>
         </div>
@@ -8,6 +8,6 @@
 
 <script>
 export default {
-    name: 'Header-Component'
+    name: 'header-component'
 }
 </script>

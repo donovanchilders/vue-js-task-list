@@ -1,9 +1,9 @@
 <template>
     <div>
-        <div v-if="getTasks && getTasks.length" class="my-4">
+        <div v-if="getTasks && getTasks.length">
             <Task :task="task" v-for="task in getTasks" :key="task.id" />
         </div>
-        <div v-else class="my-4">
+        <div v-else>
             <p>No Tasks.</p>
         </div>
         <AddTask />
