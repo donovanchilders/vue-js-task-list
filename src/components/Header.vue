@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-light border-bottom">
+    <nav class="navbar navbar-light border-bottom expand-md">
         <div class="container">
             <a class="navbar-brand" href="/">Vue Task List</a>
         </div>
