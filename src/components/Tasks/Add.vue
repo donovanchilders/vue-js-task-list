@@ -1,5 +1,5 @@
 <template>
-    <form @submit.prevent="addTask" class="border p-4 my-4 bg-light">
+    <form @submit.prevent="addTask" class="border p-3 my-4 bg-light">
         <fieldset>
             <legend>Add a new task</legend>
             <div class="row">
@@ -22,7 +22,7 @@ export default {
     }),
     methods: {
         addTask() {
-            this.$store.dispatch('addTask', this.name);
+            this.$store.dispatch('addTask', { name: this.name });
             this.name = null;
         }
     }
