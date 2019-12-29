@@ -1,7 +1,12 @@
 <template>
     <div>
         <div v-if="getTasks && getTasks.length">
-            <Task :task="task" v-for="task in getTasks" :key="task.id" />
+            <ul class="list-group list-group-flush">
+                <Task :task="task" v-for="task in getTasks" :key="task.id" />
+            </ul>
+            <div class="mt-3 font-italic">
+                {{ remaingTaskCount }}
+            </div>
         </div>
         <div v-else>
             <p>No Tasks.</p>
@@ -40,6 +45,10 @@ export default {
         getTasks() {
             let tasks = this.$store.getters['getTasks'];
             return tasks;
+        },
+        remaingTaskCount() {
+            let taskCount = this.getTasks.filter(task => !task.completed).length;
+            return `${taskCount} ${(taskCount === 1) ? 'task' : 'tasks'} remaining`;
         }
     }
 }

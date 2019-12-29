@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <li class="list-group-item pl-0">
         <label>
             <input type="checkbox" v-model="task.completed" @change="toggleTask" class="mr-2" />
             <span :class="{ 'completed': task.completed }">{{ task.name }}</span>
@@ -7,7 +7,7 @@
                 <span aria-hidden="true">&times;</span>
             </button>
         </label>
-    </div>
+    </li>
 </template>
 
 <script>
