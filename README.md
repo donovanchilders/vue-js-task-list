@@ -11,6 +11,8 @@ Task changes - along with new tasks - will be saved to your browser's sessionSto
 
 You can clear sessionStorage by invoking the button in the appliation's footer, `Clear Session Storage`. 
 
+
+## Demo
 See the [online demo](https://demos.donovanchilders.com/vue-js-task-list/) to test the app for yourself.
 
 ## Project setup
