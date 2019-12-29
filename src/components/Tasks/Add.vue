@@ -4,7 +4,7 @@
             <legend>Add a new task</legend>
             <div class="row">
                 <div class="col-lg-9">
-                    <input type="text" v-model="name" class="form-control" />
+                    <input type="text" v-model="name" class="form-control" required/>
                 </div>
                 <div class="col-lg-3 mt-3 mt-lg-0">
                     <button type="submit" :disabled="!this.name" class="btn btn-primary w-100">Add Task</button>
