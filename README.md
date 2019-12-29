@@ -1,4 +1,4 @@
-# task-list
+# Vue.js Task List
 
 Yet another Vue.js Task List application.
 
