@@ -8,6 +8,7 @@
                     </p>
                 </div>
                 <div class="col-lg-6 text-lg-right">
+                    <StorageChooser />
                     <button class="btn btn-sm btn-link" @click.prevent="clearSessionStorage">Clear Session Storage</button>
                     <div v-if="sessionCleared"><small>Cleared! <a href="">Reload</a> to show all default items</small></div>
                 </div>
@@ -17,11 +18,16 @@
 </template>
 
 <script>
+import StorageChooser from './StorageChooser';
+
 export default {
     name: 'footer-component',
     data: () => ({
         sessionCleared: false
     }),
+    components: {
+        StorageChooser
+    },
     methods: {
         clearSessionStorage() {
             this.$store.dispatch('clearStorage');

@@ -29,7 +29,7 @@ export default {
         // Setup storage
         let storageScheme = this.$store.getters['getStorageScheme'];
         if (!storageScheme) {
-            this.$store.dispatch('setStorageScheme', 'local');
+            this.$store.dispatch('setStorageScheme', 'localStorage');
         } else {
             this.$store.dispatch('saveStorageScheme', storageScheme);
         }

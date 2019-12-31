@@ -58,15 +58,8 @@ export default new Vuex.Store({
         clearStorage( {commit}) {
             commit('clearStorage');
         },
-        getStorageScheme() {
-            return localStorage.getItem('dmc-todo-list-storage-scheme');
-        },
         setStorageScheme( {commit}, payload) {
-            let schemes = {
-                'local': 'localStorage',
-                'session': 'sessionStorage'
-            }
-            commit('setStorageScheme', schemes[payload]);
+            commit('setStorageScheme', payload);
         },
         saveStorageScheme( {commit}, payload) {
             commit('saveStorageScheme', payload);
@@ -86,6 +79,9 @@ export default new Vuex.Store({
         },
         getStorageScheme(state) {
             return localStorage.getItem('dmc-todo-list-storage-scheme');
+        },
+        getStorageSchemeState(state) {
+            return state.storageScheme;
         }
     }
 })
