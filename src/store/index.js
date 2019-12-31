@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
+        storageScheme: 'sessionStorage',
         tasks: []
     },
     mutations: {
@@ -25,30 +26,30 @@ export default new Vuex.Store({
             let item = state.tasks.find(task => task.id === payload.id);
             item.completed = payload.completed;
         },
-        updateLocalStorage(state) {
-            let storage = window.sessionStorage;
+        updateStorage(state) {
+            let storage = window[state.storageScheme];
             storage.setItem('dmc-todo-list', JSON.stringify(state.tasks));
         },
-        clearSessionStorage() {
-            let storage = window.sessionStorage;
+        clearStorage(state) {
+            let storage = window[state.storageScheme];
             storage.clear();
         }
     },
     actions: {
         addTask ( {commit}, payload) {
             commit('addTask', payload);
-            commit('updateLocalStorage');
+            commit('updateStorage');
         },
         toggleCompleted ( {commit }, payload) {
             commit('toggleCompleted', payload);
-            commit('updateLocalStorage');
+            commit('updateStorage');
         },
         deleteTask ( {commit }, payload) {
             commit('deleteTask', payload);
-            commit('updateLocalStorage');
+            commit('updateStorage');
         },
         clearStorage( {commit}) {
-            commit('clearSessionStorage');
+            commit('clearStorage');
         }
     },
     getters: {
