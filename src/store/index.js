@@ -32,7 +32,14 @@ export default new Vuex.Store({
         },
         clearStorage(state) {
             let storage = window[state.storageScheme];
-            storage.clear();
+            storage.removeItem('dmc-todo-list');
+        },
+        setStorageScheme(state, payload) {
+            localStorage.setItem('dmc-todo-list-storage-scheme', payload);
+            state.storageScheme = payload;
+        },
+        saveStorageScheme(state, payload) {
+            state.storageScheme = payload;
         }
     },
     actions: {
@@ -50,6 +57,19 @@ export default new Vuex.Store({
         },
         clearStorage( {commit}) {
             commit('clearStorage');
+        },
+        getStorageScheme() {
+            return localStorage.getItem('dmc-todo-list-storage-scheme');
+        },
+        setStorageScheme( {commit}, payload) {
+            let schemes = {
+                'local': 'localStorage',
+                'session': 'sessionStorage'
+            }
+            commit('setStorageScheme', schemes[payload]);
+        },
+        saveStorageScheme( {commit}, payload) {
+            commit('saveStorageScheme', payload);
         }
     },
     getters: {
@@ -63,6 +83,9 @@ export default new Vuex.Store({
                 return items;
             }
             return null;
+        },
+        getStorageScheme(state) {
+            return localStorage.getItem('dmc-todo-list-storage-scheme');
         }
     }
 })

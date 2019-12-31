@@ -26,8 +26,15 @@ export default {
         AddTask
     },
     created() {
-        // Create some demo tasks
+        // Setup storage
+        let storageScheme = this.$store.getters['getStorageScheme'];
+        if (!storageScheme) {
+            this.$store.dispatch('setStorageScheme', 'local');
+        } else {
+            this.$store.dispatch('saveStorageScheme', storageScheme);
+        }
 
+        // Create some demo tasks
         let existingTasks = this.$store.getters['getTasksFromStorage'];
         
         if (existingTasks) {
