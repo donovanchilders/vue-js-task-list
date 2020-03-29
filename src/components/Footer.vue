@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <p>
-                        <small>&copy; 2019 Donovan Childers - Yet another To-do list built with Vue.js </small>
+                        <small>&copy; 2020 Donovan Childers - Yet another To-do list built with Vue.js </small>
                     </p>
                 </div>
                 <div class="col-lg-6 text-lg-right">
