@@ -55,6 +55,7 @@ export default new Vuex.Store({
         getTasks(state) {
             return state.tasks;
         },
+        // eslint-disable-next-line
         getTasksFromStorage(state) {
             let storage = window.sessionStorage;
             let items = storage.getItem('dmc-todo-list');
